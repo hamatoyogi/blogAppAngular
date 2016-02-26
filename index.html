@@ -23,7 +23,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body ng-app="blogApp">
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -64,7 +64,10 @@
 		<div class="row">
 
 			<!-- Dynamic Content Here -->
-
+			<section class="col-md-8" ng-controller="postController">
+				<div ng-repeat="post in posts | limitTo: 3" ng-include="template_url">
+				</div>
+			</section>
 
 			<!-- Blog Sidebar Widgets Column -->
 			<aside class="col-md-4">
@@ -184,6 +187,8 @@
 	<script src="lib/js/jquery.min.js"></script>
 	<script src="lib/js/bootstrap.min.js"></script>
 	<script src="lib/js/marked.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.js"></script>
 
 	<!-- App -->
 	<script src="app/app.js"></script>
