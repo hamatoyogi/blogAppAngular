@@ -1,5 +1,7 @@
+{{ pageNumber }}
 <!-- Begin Post -->
-<article>
+<h2 class="page-header">Showing {{ posts.length }} posts</h2>
+<article ng-repeat="post in posts | orderBy:'-date' | limitTo: 3 : (pageNumber - 1) * 3">
     <header>
         <h2>
             <a href="#">{{post.title}}</a>
@@ -25,7 +27,7 @@
 							<span ng-repeat="tag in post.tags">
 								<a href="#" class="label label-default">{{ tag }}</a>
 							</span>
-
+        </p>
 
         <a class="btn btn-primary pull-right" href="#">
             Read More <i class="glyphicon glyphicon-chevron-right"></i>
@@ -33,4 +35,12 @@
     </footer>
     <hr>
 </article>
+<ul class="pager">
+    <li class="previous">
+        <a href="#/posts/{{ pageNumber - 1 }}" ng-show="pageNumber > 1">&larr; Newer</a>
+    </li>
+    <li class="next">
+        <a href="#/posts/{{ pageNumber - - 1}}" ng-show="pageNumber < 3">&rarr; Older</a>
+    </li>
+</ul>
 <!-- End of Post -->
