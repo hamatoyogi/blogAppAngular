@@ -15,6 +15,10 @@
                 templateUrl: 'app/admin/templates/admin.html',
                 controller: 'adminController'
             })
+            .when('/post/:id', {
+                templateUrl: 'app/posts/templates/fullPosts.html',
+                controller: 'fullPostCtrl'
+            })
             //.when('/:search', {
             //    templateUrl: 'app/posts/templates/posts.html',
             //    controller: 'searchController'

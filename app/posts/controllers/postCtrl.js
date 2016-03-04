@@ -6,7 +6,7 @@
         postsReader.then(function (data) {
             $scope.pageNumber = $routeParams.pageNumber;
             $scope.posts = data;
-            console.log($scope.searchBar);
+            //console.log($scope.searchBar);
         })
 
 
