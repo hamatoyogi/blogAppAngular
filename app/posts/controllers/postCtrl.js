@@ -4,10 +4,10 @@
 (function (blogApp){
     blogApp.controller('postController', ['$scope', 'postsReader', '$routeParams' , function ($scope,postsReader, $routeParams) {
         postsReader.then(function (data) {
-            $scope.pageNumber = $routeParams.pageNumber;
             $scope.posts = data;
-            //console.log($scope.searchBar);
-        })
+        });
+        $scope.pageNumber = $routeParams.pageNumber;
+        $scope.searchParam = $routeParams.search;
 
 
     }]);

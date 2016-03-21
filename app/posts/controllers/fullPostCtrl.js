@@ -2,16 +2,22 @@
  * Created by yoavganbar on 04/03/2016.
  */
 (function (blogApp){
-    blogApp.controller('fullPostCtrl', ['postReader','$scope', '$routeParams', function(postReader, $scope, $routeParams) {
+    blogApp.controller('fullPostCtrl', ['postsReader','$scope', '$routeParams', function(postsReader, $scope, $routeParams) {
         console.log($routeParams);
-        postReader.then(function(data){
-            $scope.posts = data.data.posts;
-            for (var i = 0; i < data.data.posts.length; i++) {
-                console.log(data.data.posts[i]);
-                if(data.data.posts[i].urlPath == $routeParams.id) {
-                    $scope.post = data.data.posts[i];
-                }
-            };
-        });
+
+        $scope.post = $routeParams.id;
+
+
+            //$scope.posts = postsReader;
+            //for (var i = 0; i < $scope.posts.length; i++) {
+            //    console.log($scope.posts[i]);
+            //    if($scope.posts[i].htmlPath == $routeParams.id) {
+            //        $scope.post = $scope.posts[i];
+            //    }
+            //}
+
+
+
+
     }]);
 })(angular.module('blogApp'));

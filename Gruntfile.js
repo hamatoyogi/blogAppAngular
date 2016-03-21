@@ -75,12 +75,18 @@ module.exports = function (grunt) {
 					open: true
 				}
 			}
+		},
+		nodemon: {
+			dev: {
+				script: 'server/server.js'
+			}
 		}
-	});
 
+	});
+	grunt.loadNpmTasks('grunt-nodemon');
 	// Open local server and watch for file changes
-	grunt.registerTask('serve', ['portPick', 'connect', 'watch']);
+	grunt.registerTask('serve', ['portPick', 'connect', 'watch', 'nodemon']);
 
 	// Default task(s).
-	grunt.registerTask('default', ['serve']);
+	grunt.registerTask('default', ['nodemon']);
 };

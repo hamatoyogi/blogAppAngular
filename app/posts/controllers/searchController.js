@@ -6,7 +6,7 @@
             // Prevent url get request from submit
             $scope.searchAction = function ($event) {
                 $event.preventDefault();
-                $route.updateParams({search: $scope.searchBar});
+                $route.updateParams({search: $scope.searchBar, pageNumber: 1});
                 console.log($scope.searchBar);
             };
 

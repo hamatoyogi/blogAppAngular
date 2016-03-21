@@ -17,6 +17,12 @@ app.get('/getData',function(req,res){
         res.send(data);
     });
 });
+//app.get('/data/full-post/:id',function(req,res){
+//    fs.readFile(__dirname + '/../data/posts/html/', 'utf-8', function (err, data) {
+//        if (err) {throw err;}
+//        res.send(data);
+//    });
+//});
 
 // routes
 
